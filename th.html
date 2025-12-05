@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Central de Gastos</title>
+
+    <!-- LINK DO CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- DASHBOARD DIRETO -->
+    <div id="dashboard" class="screen">
+
+        <header>
+            <h1>Central de Gastos</h1>
+        </header>
+
+        <!-- TOTALIZADORES -->
+        <section>
+            <h2>Resumo do Mês</h2>
+
+            <div class="totals">
+                <p><strong>Total Bradesco:</strong> R$ <span id="total-bradesco">0.00</span></p>
+                <p><strong>Total Porto Seguro:</strong> R$ <span id="total-porto">0.00</span></p>
+                <p><strong>Total Geral:</strong> R$ <span id="total-geral">0.00</span></p>
+            </div>
+        </section>
+
+        <!-- FORM PARA ADICIONAR GASTO -->
+        <section>
+            <h2>Adicionar Gasto</h2>
+
+            <label>Cartão:</label>
+            <select id="cartao">
+                <option value="Bradesco">Bradesco</option>
+                <option value="Porto Seguro">Porto Seguro</option>
+            </select>
+
+            <label>Valor:</label>
+            <input type="number" id="valor" placeholder="Ex: 120.50">
+
+            <label>Notas:</label>
+            <textarea id="nota" placeholder="Descreva algo opcional..."></textarea>
+
+            <label>Anexar Comprovante:</label>
+            <input type="file" id="comprovante">
+
+            <label>Status:</label>
+            <select id="status">
+                <option value="pendente">Pendente</option>
+                <option value="pago">Pago</option>
+            </select>
+
+            <button onclick="adicionarGasto()">Adicionar</button>
+        </section>
+
+        <!-- LISTA DE GASTOS -->
+        <section>
+            <h2>Gastos Registrados</h2>
+            <table id="tabela-gastos">
+                <thead>
+                    <tr>
+                        <th>Cartão</th>
+                        <th>Valor</th>
+                        <th>Notas</th>
+                        <th>Status</th>
+                        <th>Comprovante</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="gastos-lista"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
